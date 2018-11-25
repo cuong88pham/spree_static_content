@@ -6,6 +6,7 @@ module Spree
     layout :determine_layout
 
     def show
+      byebug
       @page = Spree::Page.joins(:translations).by_store(current_store).visible.find_by!(slug: request.path)
     end
 
